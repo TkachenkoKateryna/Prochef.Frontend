@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+<ion-list >
+    <ion-item>
+      <ion-item-divider color="dark">
+        <ion-label><h1><strong> Main Dishes </strong></h1></ion-label>
+      </ion-item-divider> 
+    </ion-item>
+    <ion-item lines="none" *ngFor="let menuItem of mainDishes" >
+      <ion-grid style=" align-content: center; justify-content: center;">
+        <ion-row class="ion-padding" align-items-center justify-content-center style= "height:400px">
+          <ion-col offset=2 size=8>
+            <ion-card>
+              <ion-card-header>
+                <ion-item-divider color="danger">
+                  <h1 *ngIf="menuItem.section==='Main dishes'">{{menuItem.name}}</h1>
+                </ion-item-divider>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-row style="width:100%">
+                  <ion-col style="width:80%" >
+                    <ion-img [src]="menuItem.imgUrl"></ion-img>
+                  </ion-col>
+                  <ion-col style="width:20%">
+                    <ion-row>
+                      <blockquote class="blockquote">
+                        <h2>{{menuItem.description}}</h2>
+                        <footer class="blockquote-footer" style="font-size:20px"><strong><cite>{{menuItem.price | currency}}</cite></strong></footer>
+                      </blockquote>
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          </ion-row>
+          </ion-grid>
+      </ion-item>
+      <ion-item > 
+        <ion-item-divider color="dark">
+        <ion-label  style="text-align:center"><h1><strong> Salads </strong></h1></ion-label>
+        </ion-item-divider>
+      </ion-item>
+      <ion-item lines="none"  *ngFor="let menuItem of salads" >
+          <ion-grid style=" align-content: center; justify-content: center;">
+            <ion-row class="ion-padding" align-items-center justify-content-center style= "height:400px">
+              <ion-col offset=2 size=8>
+              <ion-card>
+                <ion-card-header>
+                  <ion-item-divider color="danger">
+                    <h1  *ngIf="menuItem.section==='Salads'">{{menuItem.name}}</h1>
+                </ion-item-divider>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-row style="width:100%">
+                    <ion-col style="width:80%" >
+                      <ion-img [src]="menuItem.imgUrl"></ion-img>
+                      </ion-col>
+                      <ion-col style="width:20%">
+                        <ion-row>
+                          <blockquote class="blockquote">
+                            <h2>
+                          {{menuItem.description}}</h2>
+                          <footer class="blockquote-footer" style="font-size:20px"><strong><cite>{{menuItem.price | currency}}</cite></strong></footer>
+                        </blockquote>
+                        </ion-row>
+                      </ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          </ion-grid>
+        </ion-item>
+        <ion-item > 
+          <ion-item-divider color="dark">
+          <ion-label><h1><strong> Desserts </strong></h1></ion-label>
+          </ion-item-divider>
+        </ion-item>
+        <ion-item lines="none"  *ngFor="let menuItem of desserts" >
+          <ion-grid style=" align-content: center; justify-content: center;">
+            <ion-row class="ion-padding" align-items-center justify-content-center style= "height:400px">
+              <ion-col offset=2 size=8>
+              <ion-card>
+                <ion-card-header>
+                  <ion-item-divider color="danger">
+                    <h1  *ngIf="menuItem.section==='Desserts'">{{menuItem.name}}</h1>
+                </ion-item-divider>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-row style="width:100%">
+                    <ion-col style="width:80%" >
+                      <ion-img [src]="menuItem.imgUrl"></ion-img>
+                      </ion-col>
+                      <ion-col style="width:20%">
+                        <ion-row>
+                          <blockquote class="blockquote">
+                            <h2>
+                          {{menuItem.description}}</h2>
+                          <footer class="blockquote-footer" style="font-size:20px"><strong><cite>{{menuItem.price | currency}}</cite></strong></footer>
+                        </blockquote>
+                        </ion-row>
+                      </ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          </ion-grid>
+        </ion-item>
+</ion-list>
+</ion-content>

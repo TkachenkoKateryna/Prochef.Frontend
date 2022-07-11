@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar color="dark">
+ 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-toolbar color="dark">
+    <ion-title size="large"> Products
+      <ion-button style="margin-left:40px;" color="light" (click)="onCreateProduct()">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-searchbar  (ionInput)="filterList($event)" showCancelButton="focus"></ion-searchbar>
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <select style="color:black" class="form-control" [(ngModel)]="selectedPlace" name="placeId">
+        <option value="none"> Select Place </option>
+        <option value="Fridge"> Fridge </option>
+        <option value="Storeroom"> Storeroom </option>
+        <option value="Pantry"> Pantry </option>
+      </select>
+      <select style="color:black" class="form-control" [(ngModel)]="selectedState" name="stateId">
+        <option value="none"> Select State </option>
+        <option value="Fresh"> Fresh </option>
+        <option value="NeedToBeUsed"> Need to be used </option>
+        <option value="Spoiled"> Spoiled </option>
+      </select>
+      <select style="color:black" class="form-control" [(ngModel)]="selectedCategory" name="categoryId">
+        <option value="none"> Select Category </option>
+        <option value="Vegetables"> Vegetables </option>
+        <option value="Fruits"> Fruits </option>
+        <option value="Dairy"> Dairy </option>
+        <option value="Meet"> Meet </option>
+        <option value="Eggs"> Eggs </option>
+        <option value="Seafood"> Seafood </option>
+        <option value="Cereals"> Cereals </option>
+      </select>
+      <ion-button type="submit">
+        <ion-icon name="filter"></ion-icon>
+      </ion-button>
+      <ion-button type="button" (click)="discardFilter()">
+        <ion-icon name="remove-circle-outline"></ion-icon>
+      </ion-button>
+    </form>
+    </ion-title>
+  </ion-toolbar>
+  <ion-grid style="background:#C28C2E;">
+    <ion-row>
+      <ion-col size="12" size-md="6" text-center  *ngFor="let product of products">
+        <ion-card >
+          <ion-card-header >
+            <ion-card-title >
+              <ion-toolbar>
+                <ion-avatar>
+                  <ion-img [src]="product.imgUrl"></ion-img>
+                </ion-avatar>
+              <h6>{{product.name}}</h6>
+              <ion-buttons slot="end">
+                <ion-button (click)="onEditModel(product.name, product.id)">
+                  <ion-icon name="create-outline"></ion-icon>
+                </ion-button>
+                <ion-button (click)=onDeleteProduct(product.id)>
+                  <ion-icon name="trash"></ion-icon>
+                </ion-button>
+              <ion-chip>
+              <ion-label class="my-label"> <ion-icon name="pin-outline"></ion-icon>{{product.deliveryDate.slice(0,10)}} ({{product.termOfUse}})</ion-label>
+            </ion-chip>
+              <ion-chip *ngIf="product.state==='Fresh'">
+                <ion-label class="my-label" color="success">{{product.state}}</ion-label>
+              </ion-chip>
+              <ion-chip *ngIf="product.state==='Spoiled'">
+                <ion-label class="my-label" color="danger">{{product.state}}</ion-label>
+              </ion-chip>
+              </ion-buttons>
+            </ion-toolbar>
+            </ion-card-title>
+            <ion-card-subtitle>
+              {{product.price | currency}} | 
+              <ion-icon name="storefront-outline"></ion-icon>  {{product.quantityInStock}} 
+              | <ion-badge class="my-label" color="medium">{{product.place}}</ion-badge>
+              | <ion-badge class="my-label" color="medium">{{product.category}}</ion-badge>
+              | <ion-icon name="pizza-outline"></ion-icon>{{product.calories}}
+            </ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

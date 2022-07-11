@@ -1,0 +1,37 @@
+{
+    "LANGUAGES": {
+        "EN": "EN",
+        "UA": "UK"
+    },
+    "MENU": {
+        "LOGIN": "Log in",
+        "PRODUCTS": "Products",
+        "MENU": "Menu",
+        "STATISTICS": "Statistics",
+        "LOGOUT": "Log out",
+        "REGISTER": "Register"
+    },
+    "REGISTER": {
+        "EMAIL": "Email",
+        "USERNAME": "Username",
+        "PASSWORD": "Password",
+        "FRISTNAME": "First name",
+        "MIDDLENAME": "Middle name",
+        "LASTNAME": "Last name",
+        "SELECT ROLE": "Select role",
+        "SELECT RESTAURANT": "Select restaurant"
+    },
+    "MESSAGES": {
+		"USERNAMEREQUIRED": "Username is required",
+		"EMAILREQUIRED": "Email is required",
+		"PASSREQUIRED": "Password is required",
+		"PASSLENGTH": "Password must be at least 6 characters",
+		"LOGINFAILED": "Log in failed",
+		"LOGINSUCCESS": "Logged in as",
+		"USERNAMEMINLENGTH": "Username must be at least 3 characters",
+		"USERNAMEMAXLENGTH": "Username must be at most 20 characters",
+		"EMAILFORMAT": "Email must be a valid email address",
+		"SIGNUPFAILED": "Signup failed",
+		"SIGNUPSUCCESS": "Your registration is successful"
+	}
+}

@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title >
+      Place
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form  #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="5" offset-sm="3">
+          <ion-list>
+            <ion-item>
+              <ion-label> Name: </ion-label>
+                <ion-input  type="text" required placeholder="Name"  [(ngModel)]="formName" name="formName"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label> Quantity in Stock: </ion-label>
+                <ion-input required type="number" placeholder="Enter quantity in stock"  [(ngModel)]="formQuantityInStock" name="formQuantityInStock"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label> Price </ion-label>
+                <ion-input  type="number" placeholder="Enter price"  [(ngModel)]="formPrice" name="formPrice" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label> Term of Use </ion-label>
+                <ion-input  type="number" placeholder="Enter term of use"  [(ngModel)]="formTermOfUse" name="formTermOfUse" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label> Calories </ion-label>
+                <ion-input  type="number" placeholder="Enter calories" [(ngModel)]="formCalories" name="formCalories" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label> Delivery Date </ion-label>
+              <ion-datetime 
+                displayFormat="YYYY-MM-DD" 
+                picker-format="YYYY-MM-DD"
+                [(ngModel)]="formDeliveryDate"
+                name="formDeliveryDate"
+                required
+              >
+              </ion-datetime>
+          </ion-item>
+            <ion-item>
+              <ion-label> Img Url </ion-label>
+                <ion-input  type="string" placeholder="Enter imgUrl" name="formImgUrl" [(ngModel)]="formImgUrl" required></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-md="5" offset-sm="3">
+            <ion-button 
+            type="submit"
+            expand="block" 
+            [disabled]="!f.valid"
+          >Add product</ion-button>
+        </ion-col>
+      </ion-row>
+      </ion-grid>
+</form>
+</ion-content>
+
+

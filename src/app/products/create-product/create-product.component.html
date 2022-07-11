@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title >
+      Place
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form  #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="5" offset-sm="3">
+          <ion-list>
+            <ion-item>
+              <ion-label> Name: </ion-label>
+                <ion-input  type="text" required placeholder="Name"  ngModel name="name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label> Quantity in Stock: </ion-label>
+                <ion-input required type="number" placeholder="Enter quantity in stock" ngModel name="quantityInStock"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label> Price </ion-label>
+                <ion-input  type="number" placeholder="Enter price" ngModel name="price" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label> Term of Use </ion-label>
+                <ion-input  type="number" placeholder="Enter term of use" ngModel name="termOfUse" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label> Calories </ion-label>
+                <ion-input  type="number" placeholder="Enter calories" ngModel name="calories" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label> Delivery Date </ion-label>
+              <ion-datetime 
+                displayFormat="YYYY-MM-DD" 
+                picker-format="YYYY-MM-DD"
+                ngModel
+                name="deliveryDate"
+                required
+              >
+              </ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-select type="text"ngModel name="placeId"  style="max-width: 100%" placeholder="Select Place">
+              <ion-select-option value=1>Fridge</ion-select-option>
+              <ion-select-option value=2>Storeroom</ion-select-option>
+              <ion-select-option value=3>Pantry</ion-select-option>
+            </ion-select>
+          </ion-item>
+            <ion-item>
+              <ion-select type="text" ngModel name="categoryId"  style="max-width: 100%" placeholder="Select category">
+                <ion-select-option value=1>Vegetables</ion-select-option>
+                <ion-select-option value=2>Fruits</ion-select-option>
+                <ion-select-option value=3>Dairy</ion-select-option>
+                <ion-select-option value=4>Meet</ion-select-option>
+                <ion-select-option value=5>Eggs</ion-select-option>
+                <ion-select-option value=6>Seafood</ion-select-option>
+                <ion-select-option value=7>Cereals</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label> Img Url </ion-label>
+                <ion-input  type="string" placeholder="Enter imgUrl" ngModel name="imgUrl" required></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-md="5" offset-sm="3">
+            <ion-button 
+            type="submit"
+            expand="block" 
+            [disabled]="!f.valid"
+          >Add product</ion-button>
+        </ion-col>
+      </ion-row>
+      </ion-grid>
+</form>
+</ion-content>
+
+

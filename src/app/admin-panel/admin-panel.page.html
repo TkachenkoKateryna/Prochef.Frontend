@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Admin-panel</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-toolbar color="dark">
+    <ion-title size="large"> Admin Panel
+      <ion-button style="margin-left:40px;" color="light" [routerLink]="['/', 'register']">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-title>
+    </ion-toolbar>
+<ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col size=4>
+        Full Name
+      </ion-col>
+      <ion-col  size=2>
+        Restaurant
+      </ion-col>
+      <ion-col  size=2>
+        Position
+      </ion-col>
+      <ion-col size=2>
+        Status
+      </ion-col>
+    </ion-row>
+      <ion-row width="100%" *ngFor="let employee of employees">
+        <ion-col size=4>
+          <ion-label>{{employee.middleName}} {{employee.firstName}} {{employee.lastName}}</ion-label>
+        </ion-col>
+        <ion-col size=2>
+          <ion-label> Macdonalds</ion-label>
+        </ion-col>
+        <ion-col size=2>
+          <ion-label>{{employee.roleId == 1 ? "Chef Admin" : 2 ? "Restaurant Manager" : "Chef"}}</ion-label>
+        </ion-col>
+        <ion-col size=2>
+          <ion-label *ngIf="employee.ban===true">Banned</ion-label>
+          <ion-label *ngIf="employee.ban===false">Not banned</ion-label>
+        </ion-col>
+        <ion-col size=2>
+          <ion-button (click)="banUserAlert(employee.email)">
+            <ion-icon name="ban-outline"></ion-icon>
+          </ion-button>
+          <ion-button (click)="discardBanAlert(employee.email)">
+            <ion-icon name="close-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-list>
+</ion-content>

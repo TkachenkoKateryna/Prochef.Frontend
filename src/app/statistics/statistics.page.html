@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Statistics</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<form (ngSubmit)="onSetDates()" #f="ngForm">
+  <ion-grid>
+    <ion-row>
+      <ion-col size=5 >
+        <ion-item>
+          <ion-label>Start Date</ion-label>
+          <ion-datetime 
+            displayFormat="YYYY-MM-DD" 
+            picker-format="YYYY-MM-DD"
+            [ngModel] = "startDate"
+            name="date-from"
+            required
+            #startCtrl = "ngModel"
+          >
+          </ion-datetime>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+     <ion-item>
+        <ion-label>End Date</ion-label>
+        <ion-datetime 
+          display-format="YYYY-MM-DD"
+          picker-format="YYYY-MM-DD"
+          name="date-to"
+          [ngModel] = "endDate"
+          required
+          ></ion-datetime>
+      </ion-item>
+    </ion-col>
+   <ion-col>
+      <ion-button 
+        type="submit"
+        [disabled]="!datesValid()" class="orange"> Get Statistics </ion-button>
+   </ion-col>
+   </ion-row>
+  </ion-grid>
+</form>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="8">
+        <canvas #barChart></canvas>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="8">
+        <canvas #lineChart></canvas>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

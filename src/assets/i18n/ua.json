@@ -1,0 +1,36 @@
+{
+    "LANGUAGES": {
+        "EN": "EN",
+        "UA": "UK"
+    },
+    "MENU": {
+        "LOGIN": "Увійти",
+        "PRODUCTS": "Продукти",
+        "MENU": "Меню",
+        "STATISTICS": "Стастика",
+        "LOGOUT": "Вийти",
+        "REGISTER": "Зареєструвати"
+    },
+    "REGISTER": {
+        "EMAIL": "Пошта",
+        "PASSWORD": "Пароль",
+        "FRISTNAME": "Ім'я",
+        "MIDDLENAME": "Прізвище",
+        "LASTNAME": "Побатькові",
+        "SELECT ROLE": "Оберіть роль",
+        "SELECT RESTAURANT": "Оберіть ресторан"
+    },
+    "MESSAGES": {
+		"USERNAMEREQUIRED": "Ім'я користувача є обов'язковим",
+		"EMAILREQUIRED": "Пошта є обов'язковою",
+		"PASSREQUIRED": "Пароль є обов'язковим",
+		"PASSLENGTH": "Пароль повинен бути щонайменш 6 знаків",
+		"LOGINFAILED": "Помилка входу",
+		"LOGINSUCCESS": "Ви увійшли як",
+		"USERNAMEMINLENGTH": "Ім'я користувача повинно бути більш ніж 3 символа",
+		"USERNAMEMAXLENGTH": "Ім'я користувача повинно бути менже ніж 20 символів",
+		"EMAILFORMAT": "Невірний формат пошти",
+		"SIGNUPFAILED": "Реєстрацію не здійснено",
+		"SIGNUPSUCCESS": "Вас було зареєстровано"
+	}
+}

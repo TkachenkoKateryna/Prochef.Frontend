@@ -1,0 +1,7 @@
+{
+  "name": "prochef-web-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

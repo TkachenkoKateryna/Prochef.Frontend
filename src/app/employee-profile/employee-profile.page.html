@@ -1,0 +1,27 @@
+<ion-content fullscreen>
+  <ion-card>
+    <h1><strong>Employee Profile</strong></h1>
+    <ion-grid>
+      <ion-row>
+        <ion-col size=1>
+            <ion-img *ngIf="currentUser.roleId===3"src="https://findicons.com/files/icons/2770/ios_7_icons/512/cook.png" ></ion-img>
+            <ion-img  *ngIf="currentUser.roleId===2"src="https://www.flaticon.com/svg/static/icons/svg/76/76828.svg"></ion-img>
+            <ion-img *ngIf="currentUser.roleId===1"src="https://www.flaticon.com/svg/static/icons/svg/482/482979.svg" ></ion-img>
+        </ion-col>
+        <ion-col size=8>
+          <ion-card-header>
+            <ion-card-subtitle>{{currentUser.roleId === 2 
+                                  ? "Restaurant Manager" 
+                                  : 3
+                                  ? "Chef" 
+                                  : "Chain Admin" }}</ion-card-subtitle>
+            <ion-card-title>{{currentUser.firstName}} {{currentUser.middleName}} {{currentUser.lastName}}</ion-card-title>
+          </ion-card-header>
+     </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-card>
+</ion-content>
+<ng-template #loggedOut>
+  Please login.
+</ng-template>
